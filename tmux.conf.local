@@ -3,116 +3,7 @@
 #         without any warranty.
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
 
-# windows & pane creation {{{
-
-# new window retains current path
-tmux_conf_new_window_retain_current_path=false
-
-# new pane retains current path
-tmux_conf_new_pane_retain_current_path=false
-
-# new pane tries to reconnect ssh sessions (experimental)
-tmux_conf_new_pane_reconnect_ssh=false
-
-# prompt for session name when creating a new session
-tmux_conf_new_session_prompt=false
-
-# }}}
-
-
 # display {{{
-
-# RGB 24-bit colour support (tmux >= 2.2)
-tmux_conf_theme_24b_colour=false
-
-# window style
-tmux_conf_theme_window_fg='default'
-tmux_conf_theme_window_bg='default'
-
-# highlight focused pane (tmux >= 2.1)
-tmux_conf_theme_highlight_focused_pane=false
-
-# focused pane colors
-tmux_conf_theme_focused_pane_fg='default'
-tmux_conf_theme_focused_pane_bg='#0087d7'
-
-# pane border style
-tmux_conf_theme_pane_border_style=thin
-
-# pane borders colors
-tmux_conf_theme_pane_border='#686868'
-tmux_conf_theme_pane_active_border='#686868'
-
-# pane indicator colors
-tmux_conf_theme_pane_indicator='#00afff'                # light blue
-tmux_conf_theme_pane_active_indicator='#00afff'         # light blue
-
-# status line style
-tmux_conf_theme_message_fg='#000000'
-tmux_conf_theme_message_bg='#ffff00'
-tmux_conf_theme_message_attr='bold'
-
-# status line command style (<prefix> : Escape)
-tmux_conf_theme_message_command_fg='#ffff00'
-tmux_conf_theme_message_command_bg='#000000'
-tmux_conf_theme_message_command_attr='bold'
-
-# window modes style
-tmux_conf_theme_mode_fg='default'
-tmux_conf_theme_mode_bg='#4F5B67'
-tmux_conf_theme_mode_attr='none'
-
-# status line style
-tmux_conf_theme_status_fg='#f1f1f0'
-tmux_conf_theme_status_bg='default'
-tmux_conf_theme_status_attr='none'
-
-# terminal title
-#   - built-in variables are:
-#     - #{hostname}
-#     - #{hostname_ssh}
-#     - #{username}
-#     - #{username_ssh}
-tmux_conf_theme_terminal_title='⌘ #S - #I #W'
-
-# window status style
-#   - built-in variables are:
-#     - #{hostname}
-#     - #{hostname_ssh}
-#     - #{username}
-#     - #{username_ssh}
-tmux_conf_theme_window_status_fg='#f1f1f0'
-tmux_conf_theme_window_status_bg='default'
-tmux_conf_theme_window_status_attr='none'
-# tmux_conf_theme_window_status_format='#I #W#{?window_bell_flag,◉,}#{?window_zoomed_flag,🔍,}'
-tmux_conf_theme_window_status_format='#I #W'
-
-# window current status style
-#   - built-in variables are:
-#     - #{hostname}
-#     - #{hostname_ssh}
-#     - #{username}
-#     - #{username_ssh}
-tmux_conf_theme_window_status_current_fg='#5af78e'
-tmux_conf_theme_window_status_current_bg='default'
-tmux_conf_theme_window_status_current_attr='bold'
-tmux_conf_theme_window_status_current_format='#I #W'
-#tmux_conf_theme_window_status_current_format='#I #W#{?window_zoomed_flag,🔍,}'
-
-# window activity status style
-tmux_conf_theme_window_status_activity_fg='#feea34'
-tmux_conf_theme_window_status_activity_bg='default'
-# tmux_conf_theme_window_status_activity_attr='underscore'
-
-# window bell status style
-tmux_conf_theme_window_status_bell_fg='#f1f1f0'
-tmux_conf_theme_window_status_bell_bg='default'
-tmux_conf_theme_window_status_bell_attr='blink, bold'
-
-# window last status style
-tmux_conf_theme_window_status_last_fg='#f1f1f0'
-tmux_conf_theme_window_status_last_bg='default'
-tmux_conf_theme_window_status_last_attr='none'
 
 # status left/right sections separators
 tmux_conf_theme_left_separator_main=''
@@ -125,20 +16,7 @@ tmux_conf_theme_right_separator_sub='|'
 # tmux_conf_theme_right_separator_sub=''  #   PowerlineSymbols.otf font
 
 # status left/right content:
-#   - separate main sections with '|'
-#   - separate subsections with ','
-#   - built-in variables are:
-#     - #{hostname_ssh}
-#     - #{hostname}
-#     - #{loadavg}
-#     - #{pairing}
-#     - #{prefix}
-#     - #{root}
-#     - #{synchronized}
-#     - #{username}
-#     - #{username_ssh}
 
-# tmux_conf_theme_status_left=' ❐ #S '
 tmux_conf_theme_status_left=' ⌘ #S '
 tmux_conf_theme_status_right='#{prefix} |   #(~/.zsh/google/tmux-utils/is_in_workspace && echo workspace_id) |#(~/.zsh/google/tmux-utils/workspace_id)|   #(~/.zsh/google/tmux-utils/is_in_workspace && echo snapshot) |#(~/.zsh/google/tmux-utils/snapshot_version) |#(~/.rc/citc-client-type)|#(~/.rc/citc-synced-fresh)|#(~/.rc/citc-synced-stale)|  #{username}#{root} |G|o|o|g|l|e  '
 
@@ -158,11 +36,6 @@ tmux_conf_theme_pairing_fg='none'
 tmux_conf_theme_pairing_bg='none'
 tmux_conf_theme_pairing_attr='none'
 
-# clock style (when you hit <prefix> + t)
-# you may want to use %I:%M %p in place of %R in tmux_conf_theme_status_right
-tmux_conf_theme_clock_colour='#00afff'  # light blue
-tmux_conf_theme_clock_style='24'
-
 # }}}
 
 # clipboard {{{
@@ -174,8 +47,7 @@ tmux_conf_copy_to_os_clipboard=true
 
 # }}}
 
-
-# -- user customizations -------------------------------------------------------
+# user customizations {{{
 
 bind-key -n C-s send-prefix
 
@@ -197,8 +69,6 @@ tmux_conf_theme_pairing='∞'          # U+1F453
 
 tmux_conf_theme_prefix='◈'
 
-tmux_conf_theme_24b_colour=true
-
 # start with mouse mode enabled
 set -g mouse on
 
@@ -210,3 +80,4 @@ set -g mode-keys vi
 set-hook -g window-pane-changed refresh-client
 set-hook -g session-window-changed refresh-client
 
+# }}}
