@@ -1,8 +1,3 @@
-# https://github.com/gpakosz/.tmux
-# (‑●‑●)> dual licensed under the WTFPL v2 license and the MIT license,
-#         without any warranty.
-#         Copyright 2012— Gregory Pakosz (@gpakosz).
-
 # display {{{
 
 # status left/right sections separators
@@ -31,7 +26,6 @@ tmux_conf_theme_status_right_bg='default,default,default,default,default,default
 tmux_conf_theme_status_right_attr='none,bold,none,bold,none,bold,none,underscore,none,bold,bold,bold,bold,bold,bold'
 
 # pairing indicator
-tmux_conf_theme_pairing='👓 '          # U+1F453
 tmux_conf_theme_pairing_fg='none'
 tmux_conf_theme_pairing_bg='none'
 tmux_conf_theme_pairing_attr='none'
@@ -50,20 +44,6 @@ tmux_conf_copy_to_os_clipboard=true
 # user customizations {{{
 
 bind-key -n C-s send-prefix
-
-# this is the place to override or undo settings
-unbind r
-bind r respawn-pane -k
-bind C new-session
-bind R source-file ~/.tmux.conf \; display '~/.tmux.conf sourced'
-bind X kill-session
-bind x kill-pane
-bind n next-window
-bind N previous-window
-
-# # Start windows and panes at 1, not 0
-set -g base-index 1
-setw -g pane-base-index 1
 
 tmux_conf_theme_pairing='∞'          # U+1F453
 
