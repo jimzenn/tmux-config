@@ -13,7 +13,7 @@ tmux_conf_theme_right_separator_sub='|'
 # status left/right content:
 
 tmux_conf_theme_status_left=' ⌘ #S '
-tmux_conf_theme_status_right='#(~/.zsh/google/tmux-utils/is_in_workspace && echo workspace_id) |#(~/.zsh/google/tmux-utils/workspace_id)|   #(~/.zsh/google/tmux-utils/is_in_workspace && echo snapshot) |#(~/.zsh/google/tmux-utils/snapshot_version) |#(~/.rc/citc-client-type)|#(~/.rc/citc-synced-fresh)|#(~/.rc/citc-synced-stale)| #{tmux_mode_indicator} #{username}#{root} |G|o|o|g|l|e  '
+tmux_conf_theme_status_right='#(~/.zsh/google/tmux-utils/is_in_workspace && echo workspace_id) |#(~/.zsh/google/tmux-utils/workspace_id)|   #(~/.zsh/google/tmux-utils/is_in_workspace && echo snapshot) |#(~/.zsh/google/tmux-utils/snapshot_version) |#(~/.rc/citc-client-type)|#(~/.rc/citc-synced-fresh)|#(~/.rc/citc-synced-stale)| #{tmux_mode_indicator} |G|o|o|g|l|e  '
 
 # status left style
 tmux_conf_theme_status_left_fg='#00c5fc'
@@ -21,14 +21,9 @@ tmux_conf_theme_status_left_bg='default'
 tmux_conf_theme_status_left_attr='bold'
 
 # status right style
-tmux_conf_theme_status_right_fg='#40627e,#2a475f,#2a475f,#2a475f,#2a475f,#bd9d11,#bd9d11,#bd9d11,#5af78e,#4285f4,#ea4335,#fbbc04,#4285f4,#34a853,#ea4335'
-tmux_conf_theme_status_right_bg='default,default,default,default,default,default,default,default,default,default,default,default,default,default,default'
-tmux_conf_theme_status_right_attr='none,bold,none,bold,none,bold,none,underscore,none,bold,bold,bold,bold,bold,bold'
-
-# pairing indicator
-tmux_conf_theme_pairing_fg='none'
-tmux_conf_theme_pairing_bg='none'
-tmux_conf_theme_pairing_attr='none'
+tmux_conf_theme_status_right_fg='#40627e,#2a475f,#2a475f,#2a475f,#2a475f,#bd9d11,#bd9d11,#bd9d11,#4285f4,#ea4335,#fbbc04,#4285f4,#34a853,#ea4335'
+tmux_conf_theme_status_right_bg='default,default,default,default,default,default,default,default,default,default,default,default,default,default'
+tmux_conf_theme_status_right_attr='none,bold,none,bold,none,bold,none,none,bold,bold,bold,bold,bold,bold'
 
 # }}}
 
