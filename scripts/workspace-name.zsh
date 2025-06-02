@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/zsh
 readonly BASE_PATH="/google/src/cloud"
 
 case $1 in

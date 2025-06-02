@@ -1,16 +1,11 @@
-#!/bin/zsh
+#!/usr/bin/zsh
 readonly BASE_PATH="/google/src/cloud"
-
-case $1 in
-  "$BASE_PATH"/*/*)
-    path_suffix="${1#$BASE_PATH/}"
-    citc_user=$(echo "$path_suffix" | cut -d'/' -f1)
-    workspace=$(echo "$path_suffix" | cut -d'/' -f2)
-    if [ -n "$citc_user" ] && [ -n "$workspace" ]; then
-      snapshot_file="$BASE_PATH/$citc_user/$workspace/.citc/snapshot_version"
-      if [ -f "$snapshot_file" ]; then
-        echo "⍆ℝ$(cat "$snapshot_file")"
-      fi
-    fi
-    ;;
-esac
+if [[ $1 == "$BASE_PATH"/*/* ]]; then
+  path_suffix=${1#$BASE_PATH/}
+  IFS='/' read -r citc_user workspace _ <<< "$path_suffix"
+  snapshot_file="$BASE_PATH/$citc_user/$workspace/.citc/snapshot_version"
+  if [[ -f $snapshot_file ]]; then
+    printf "⍆ℝ"
+    cat "$snapshot_file"
+  fi
+fi
